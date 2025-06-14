@@ -54,7 +54,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Call Daryl Direct',
-      value: '07458 178097',
+      value: '07920 449132',
       description: 'Available 24/7 for emergency services',
       action: 'tel:07458178097',
       actionText: 'Call Now'
@@ -62,9 +62,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      value: 'djwaste@yahoo.com',
+      value: 'daryl@dj-waste.co.uk',
       description: 'We respond within 2 hours',
-      action: 'mailto:djwaste@yahoo.com',
+      action: 'mailto:daryl@dj-waste.co.uk',
       actionText: 'Send Email'
     },
     {
@@ -72,7 +72,7 @@ const Contact = () => {
       title: 'WhatsApp',
       value: 'Send Photos & Details',
       description: 'Quick quotes via WhatsApp',
-      action: 'https://wa.me/447458178097',
+      action: 'https://wa.me/447920449132',
       actionText: 'WhatsApp'
     }
   ]
@@ -365,7 +365,7 @@ const Contact = () => {
           </p>
           <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100">
             <Phone className="h-5 w-5 mr-2" />
-            Emergency Line: 07458 178097
+            Emergency Line: 07920 449132
           </Button>
         </div>
       </section>

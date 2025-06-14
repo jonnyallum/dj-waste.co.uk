@@ -90,7 +90,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
-                Call 07458 178097
+                Call 07920 449132
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black text-lg px-8 py-4">
                 Get Free Quote
@@ -209,7 +209,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4">
               <Phone className="h-5 w-5 mr-2" />
-              Call Now: 07458 178097
+              Call Now: 07920 449132
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4">
               Request Quote Online

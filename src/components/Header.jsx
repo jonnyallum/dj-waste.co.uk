@@ -44,8 +44,7 @@ const Header = () => {
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-gray-300">
-              <Phone className="h-4 w-4 text-blue-400" />
-              <span>07458 178097</span>
+              <span>07920 449132</span>
             </div>
             <Button className="bg-blue-600 hover:bg-blue-700 text-white">
               Get Free Quote
@@ -78,7 +77,7 @@ const Header = () => {
               <div className="pt-4 border-t border-gray-800">
                 <div className="flex items-center space-x-2 text-sm text-gray-300 mb-3">
                   <Phone className="h-4 w-4 text-blue-400" />
-                  <span>07458 178097</span>
+                  <span>07920 449132</span>
                 </div>
                 <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                   Get Free Quote

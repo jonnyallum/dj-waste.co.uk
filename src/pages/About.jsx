@@ -191,7 +191,7 @@ const About = () => {
             </p>
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
               <Phone className="h-5 w-5 mr-2" />
-              Discuss Your Project
+              Call 07920 449132
             </Button>
           </div>
         </div>
