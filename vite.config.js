@@ -11,4 +11,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    allowedHosts: ['5173-ig0lurl8qo1dwy03palk0-6366d9fd.manusvm.computer'],
+  },
 })

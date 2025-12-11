@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Menu, X, Phone, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import djLogo from '../assets/dj-logo.png'
+// Logo is now in public/images/logo.jpg
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,7 +21,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={djLogo} alt="DJ Waste & Demolition" className="h-12 w-auto" />
+            <img src="/images/logo.jpg" alt="DJ Waste & Demolition" className="h-12 w-auto bg-black rounded" />
             <div className="text-white">
               <div className="text-xl font-bold">DJ Waste & Demolition</div>
               <div className="text-sm text-blue-400">Portsmouth's Premier Specialists</div>

@@ -25,20 +25,30 @@ const Home = () => {
     {
       icon: Building,
       title: 'Commercial Demolition',
-      description: 'Professional soft strip demolition and site clearance for major retailers and contractors.',
-      features: ['Retail Unit Strip-Outs', 'Office Clearances', 'Kitchen Removals']
+      description: 'Professional soft strip demolition and site clearance for major retailers and contractors. We handle everything from retail unit strip-outs to complete building demolitions.',
+      features: ['Retail Unit Strip-Outs', 'Office Clearances', 'Kitchen Removals', 'Complete Building Demolition'],
+      image: '/images/big-machinery.jpg'
     },
     {
       icon: Truck,
-      title: 'Waste Management',
-      description: 'Comprehensive waste collection and disposal with 95%+ recycling rates.',
-      features: ['Commercial Waste', 'Confidential Shredding', 'Scrap Metal Collection']
+      title: 'Domestic Waste Clearance',
+      description: 'Reliable and efficient domestic waste removal services for homes and residential properties. From garden clearances to full house clearouts.',
+      features: ['Garden Waste Removal', 'House Clearances', 'Furniture Disposal', 'Same Day Service'],
+      image: '/images/commercial-waste.jpg'
+    },
+    {
+      icon: Truck,
+      title: 'Commercial Waste Clearance',
+      description: 'Professional commercial waste collection and disposal services for businesses across Hampshire. Licensed and fully insured with competitive rates.',
+      features: ['Office Waste Collection', 'Retail Waste Management', 'Confidential Shredding', 'Regular Collections'],
+      image: '/images/corporate.jpg'
     },
     {
       icon: Recycle,
-      title: 'Environmental Solutions',
-      description: 'Sustainable waste processing and recycling facilities for all waste streams.',
-      features: ['Aggregates Recycling', 'Green Waste Processing', 'Asbestos Removal']
+      title: 'Rubble and Builders Waste',
+      description: 'Specialist builders waste and rubble removal service. We handle all construction waste, aggregates, and building materials with 95%+ recycling rates.',
+      features: ['Construction Waste', 'Concrete & Bricks', 'Timber & Metal', 'Aggregate Recycling'],
+      image: '/images/rubble-waste.jpg'
     }
   ]
 
@@ -146,24 +156,32 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-blue-400 transition-all duration-300 group">
-                <CardContent className="p-8">
-                  <div className="flex justify-center mb-6">
-                    <service.icon className="h-12 w-12 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
+              <Card key={index} className="bg-gray-900 border-gray-800 hover:border-blue-400 transition-all duration-300 group overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <service.icon className="h-10 w-10 text-blue-400" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 text-center">{service.title}</h3>
-                  <p className="text-gray-400 mb-6 text-center">{service.description}</p>
-                  <ul className="space-y-2">
+                </div>
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-400 mb-6">{service.description}</p>
+                  <ul className="space-y-2 mb-6">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-gray-300">
-                        <CheckCircle className="h-4 w-4 text-green-400 mr-3" />
+                        <CheckCircle className="h-4 w-4 text-green-400 mr-3 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
                     Learn More
                   </Button>
                 </CardContent>

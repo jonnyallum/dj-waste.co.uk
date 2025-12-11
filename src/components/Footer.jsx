@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Linkedin } from 'lucide-react'
-import djLogo from '../assets/dj-logo.png'
+// Logo is now in public/images/logo.jpg
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <img src={djLogo} alt="DJ Waste & Demolition" className="h-10 w-auto" />
+              <img src="/images/logo.jpg" alt="DJ Waste & Demolition" className="h-10 w-auto bg-black rounded" />
               <div className="text-white">
                 <div className="text-lg font-bold">DJ Waste & Demolition</div>
               </div>
@@ -21,9 +21,12 @@ const Footer = () => {
               Licensed, insured, and trusted by major retailers across Hampshire.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
-              <Twitter className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
-              <Linkedin className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+              <a href="https://www.facebook.com/share/1JGxYzwkcN/" target="_blank" rel="noopener noreferrer" aria-label="Visit our Facebook page">
+                <Facebook className="h-5 w-5 text-gray-400 hover:text-blue-400 cursor-pointer transition-colors" />
+              </a>
+              <a href="https://www.facebook.com/share/1JGxYzwkcN/" target="_blank" rel="noopener noreferrer" aria-label="View our photo gallery">
+                <span className="text-gray-400 hover:text-blue-400 cursor-pointer transition-colors text-sm font-medium">Gallery</span>
+              </a>
             </div>
           </div>
 
@@ -34,9 +37,9 @@ const Footer = () => {
               <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Commercial Demolition</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Soft Strip Demolition</Link></li>
               <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Office Strip-Outs</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Waste Management</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Asbestos Removal</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Scrap Metal Collection</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Domestic Waste Clearance</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Commercial Waste Clearance</Link></li>
+              <li><Link to="/services" className="text-gray-400 hover:text-blue-400 transition-colors">Rubble and Builders Waste</Link></li>
             </ul>
           </div>
 
