@@ -11,123 +11,131 @@ import {
   Phone,
   Clock,
   Users,
-  Wrench,
   Home,
-  Factory,
-  Trash2
+  Factory
 } from 'lucide-react'
-import demolitionImage from '../assets/pexels_demolition_1.jpg'
-import wasteImage from '../assets/pexels_waste_management_1.jpg'
-import officeImage from '../assets/checkatrade_image_5.webp'
 
 const Services = () => {
   const mainServices = [
     {
       icon: Building,
       title: 'Commercial Demolition',
-      description: 'Professional soft strip demolition and site clearance for major retailers and contractors.',
-      image: demolitionImage,
+      description: 'Professional soft strip demolition and site clearance services for major retailers, contractors, and commercial properties across Portsmouth and Hampshire. We specialize in retail unit transformations, office conversions, and complete building demolitions.',
+      image: '/images/big-machinery.jpg',
       features: [
         'Soft Strip Demolition',
-        'Commercial Site Clearance', 
-        'Retail Unit Transformations',
-        'Office Space Conversions',
+        'Retail Unit Strip-Outs', 
+        'Office Clearances',
+        'Kitchen Removals',
+        'Complete Building Demolition',
+        'Commercial Site Clearance',
         'Pre-demolition Preparation',
         'Multi-phase Project Management'
       ],
       subServices: [
         {
-          title: 'Soft Strip Demolition',
-          description: 'Interior wall removal, ceiling strips, flooring extraction for main contractors.'
+          title: 'Retail Unit Strip-Outs',
+          description: 'Complete retail space clearances for major brands including Debenhams, Topshop, and M&S. We handle everything from fixture removal to final site handover.'
         },
         {
-          title: 'Commercial Site Clearance', 
-          description: 'Full building clearances and construction site preparation.'
+          title: 'Office Demolition',
+          description: 'Multi-floor office clearances with partition wall removal, ceiling strips, and IT equipment disposal. Minimal disruption to surrounding tenants.'
         },
         {
-          title: 'Office Strip-Outs',
-          description: 'Multi-floor office clearances with partition wall removal and IT disposal.'
+          title: 'Commercial Kitchen Strip-Outs',
+          description: 'Restaurant and pub kitchen equipment removal including extraction systems, appliances, and commercial fixtures with certified disposal.'
         }
       ]
     },
     {
-      icon: Truck,
-      title: 'Waste Management',
-      description: 'Comprehensive waste collection and disposal with 95%+ recycling rates.',
-      image: wasteImage,
+      icon: Home,
+      title: 'Domestic Waste Clearance',
+      description: 'Reliable and efficient domestic waste removal services for homes and residential properties throughout Portsmouth, Havant, and Waterlooville. From garden clearances to full house clearouts, we provide same-day service with competitive rates.',
+      image: '/images/commercial-waste.jpg',
       features: [
-        'Commercial Waste Collection',
-        'Confidential Waste Destruction',
+        'Garden Waste Removal',
+        'House Clearances',
+        'Furniture Disposal',
+        'Same Day Service',
+        'Garage Clearances',
+        'Shed Dismantling',
+        'Green Waste Collection',
+        'Appliance Recycling'
+      ],
+      subServices: [
+        {
+          title: 'Full House Clearances',
+          description: 'Complete property clearances with careful handling of belongings. Ideal for house moves, probate clearances, and downsizing projects.'
+        },
+        {
+          title: 'Garden & Garage Clearance',
+          description: 'Green waste removal, garden shed dismantling, and garage clearances. We recycle all suitable materials and dispose of waste responsibly.'
+        },
+        {
+          title: 'Furniture & Appliance Removal',
+          description: 'Quick and efficient removal of unwanted furniture, white goods, and household items with same-day service available.'
+        }
+      ]
+    },
+    {
+      icon: Factory,
+      title: 'Commercial Waste Clearance',
+      description: 'Professional commercial waste collection and disposal services for businesses across Hampshire. Licensed and fully insured with competitive rates and flexible scheduling. We handle everything from regular office waste to confidential document destruction.',
+      image: '/images/corporate.jpg',
+      features: [
+        'Office Waste Collection',
+        'Retail Waste Management',
+        'Confidential Shredding',
+        'Regular Collections',
         'Scrap Metal Collection',
-        'Aggregates & Concrete Removal',
-        'Tyre Recycling',
+        'Cardboard & Packaging',
+        'Equipment Disposal',
         'Emergency Clearance'
       ],
       subServices: [
         {
-          title: 'Commercial Waste',
-          description: 'Regular collections for businesses with flexible scheduling.'
+          title: 'Office Waste Management',
+          description: 'Regular commercial waste collections for offices and business premises with flexible scheduling to suit your operations.'
         },
         {
-          title: 'Confidential Shredding',
-          description: 'Secure destruction of sensitive documents with audit trails.'
+          title: 'Confidential Waste Destruction',
+          description: 'Secure destruction of sensitive documents and confidential materials with full audit trails and certification.'
         },
         {
-          title: 'Scrap Metal Collection',
-          description: 'Free collection service for all types of scrap metal.'
+          title: 'Retail Waste Services',
+          description: 'Comprehensive waste management for retail premises including cardboard recycling, packaging disposal, and fixture removal.'
         }
       ]
-    },
-    {
-      icon: Shield,
-      title: 'Specialized Services',
-      description: 'Expert handling of hazardous materials and specialized clearances.',
-      image: officeImage,
-      features: [
-        'Asbestos Removal (Non-Licensed)',
-        'Commercial Kitchen Strip-Outs',
-        'Equipment Dismantling',
-        'Extraction System Removal',
-        'Appliance Recycling',
-        'Safe Handling Protocols'
-      ],
-      subServices: [
-        {
-          title: 'Asbestos Removal',
-          description: 'Non-licensed asbestos removal with certified disposal routes.'
-        },
-        {
-          title: 'Kitchen Strip-Outs',
-          description: 'Restaurant and pub kitchen equipment removal and disposal.'
-        },
-        {
-          title: 'Emergency Services',
-          description: '24/7 emergency clearance for urgent situations.'
-        }
-      ]
-    }
-  ]
-
-  const domesticServices = [
-    {
-      icon: Home,
-      title: 'House Clearances',
-      description: 'Complete property clearances with careful handling of belongings.'
     },
     {
       icon: Recycle,
-      title: 'Garden & Garage Clearance',
-      description: 'Green waste removal and garage clearances with recycling.'
-    },
-    {
-      icon: Wrench,
-      title: 'Light Tree Surgery',
-      description: 'Tree removal and garden maintenance services.'
-    },
-    {
-      icon: Trash2,
-      title: 'Soil & Rubble Disposal',
-      description: 'Safe disposal of construction waste and garden materials.'
+      title: 'Rubble and Builders Waste',
+      description: 'Specialist builders waste and rubble removal service for construction sites, renovation projects, and building contractors. We handle all construction waste, aggregates, concrete, bricks, and building materials with industry-leading 95%+ recycling rates.',
+      image: '/images/rubble-waste.jpg',
+      features: [
+        'Construction Waste',
+        'Concrete & Bricks',
+        'Timber & Metal',
+        'Aggregate Recycling',
+        'Soil Disposal',
+        'Plasterboard Removal',
+        'Site Clearance',
+        'Skip Alternative'
+      ],
+      subServices: [
+        {
+          title: 'Construction Site Clearance',
+          description: 'Complete site clearance for builders and contractors. We handle all types of construction waste with fast turnaround times.'
+        },
+        {
+          title: 'Aggregate & Concrete Recycling',
+          description: 'Environmentally responsible disposal and recycling of concrete, bricks, blocks, and aggregates. Licensed waste carrier with full documentation.'
+        },
+        {
+          title: 'Mixed Builders Waste',
+          description: 'Collection and disposal of mixed construction waste including timber, metal, plasterboard, and general building materials.'
+        }
+      ]
     }
   ]
 
@@ -151,8 +159,8 @@ const Services = () => {
             </h1>
             
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              From major commercial demolitions to specialized waste management, 
-              we deliver professional solutions across Hampshire and beyond.
+              From commercial demolitions to domestic waste clearance and builders rubble removal, 
+              we deliver professional solutions across Portsmouth, Hampshire and beyond.
             </p>
           </div>
         </div>
@@ -170,12 +178,12 @@ const Services = () => {
                     <h2 className="text-3xl md:text-4xl font-bold">{service.title}</h2>
                   </div>
                   
-                  <p className="text-xl text-gray-300 mb-8">{service.description}</p>
+                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">{service.description}</p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     {service.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center space-x-3">
-                        <CheckCircle className="h-4 w-4 text-green-400" />
+                        <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0" />
                         <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}
@@ -183,7 +191,7 @@ const Services = () => {
                   
                   <div className="space-y-4 mb-8">
                     {service.subServices.map((subService, idx) => (
-                      <Card key={idx} className="bg-gray-900 border-gray-800">
+                      <Card key={idx} className="bg-gray-900 border-gray-800 hover:border-blue-400 transition-colors">
                         <CardContent className="p-4">
                           <h4 className="font-semibold text-white mb-2">{subService.title}</h4>
                           <p className="text-gray-400 text-sm">{subService.description}</p>
@@ -198,7 +206,7 @@ const Services = () => {
                   </Button>
                 </div>
                 
-                <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
+                <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
                   <img 
                     src={service.image} 
                     alt={service.title}
@@ -211,37 +219,8 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Domestic Services */}
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="text-blue-400">Domestic</span> Services
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              We also provide comprehensive domestic clearance services for homeowners 
-              across Portsmouth and Hampshire.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {domesticServices.map((service, index) => (
-              <Card key={index} className="bg-gray-800 border-gray-700 hover:border-blue-400 transition-all duration-300 group">
-                <CardContent className="p-6 text-center">
-                  <div className="flex justify-center mb-4">
-                    <service.icon className="h-10 w-10 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-gray-400 text-sm">{service.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Service Areas */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -255,7 +234,7 @@ const Services = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {serviceAreas.map((area, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gray-900 rounded-lg p-4 hover:bg-gray-800 transition-colors">
+                <div className="bg-gray-800 rounded-lg p-4 hover:bg-gray-700 transition-colors">
                   <div className="text-white font-semibold">{area}</div>
                 </div>
               </div>
@@ -277,26 +256,26 @@ const Services = () => {
             <div className="text-center">
               <Clock className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">24/7 Emergency Service</h3>
-              <p className="text-blue-100">Available around the clock for urgent clearances and demolitions.</p>
+              <p className="text-blue-100">Available around the clock for urgent clearances and demolitions across Hampshire.</p>
             </div>
             
             <div className="text-center">
               <Users className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">Experienced Team</h3>
-              <p className="text-blue-100">15+ years of experience with major commercial projects.</p>
+              <p className="text-blue-100">Trusted by major retailers including Debenhams, Topshop, and M&S with 500+ projects completed.</p>
             </div>
             
             <div className="text-center">
               <Recycle className="h-12 w-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">95%+ Recycling Rate</h3>
-              <p className="text-blue-100">Environmental responsibility in all our waste management.</p>
+              <p className="text-blue-100">Environmental responsibility in all our waste management and demolition services.</p>
             </div>
           </div>
           
           <div className="text-center mt-12">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
               <Phone className="h-5 w-5 mr-2" />
-              Get Your Free Quote Today
+              Call 07920 449132 for Free Quote
             </Button>
           </div>
         </div>
@@ -306,4 +285,3 @@ const Services = () => {
 }
 
 export default Services
-
