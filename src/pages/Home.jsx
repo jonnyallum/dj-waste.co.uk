@@ -16,7 +16,7 @@ import {
   Clock,
   Award
 } from 'lucide-react'
-import heroImage from '../assets/hero-image.png'
+import heroImage from '../assets/hero-image.webp'
 import wasteImage from '../assets/pexels_waste_management_1.jpg'
 import demolitionImage from '../assets/pexels_demolition_1.jpg'
 
