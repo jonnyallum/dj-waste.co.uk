@@ -18,8 +18,8 @@ import debenhamsImage from '../assets/checkatrade_image_6.webp'
 import officeImage from '../assets/checkatrade_image_7.webp'
 import teamImage from '../assets/checkatrade_image_8.webp'
 import topshopImage from '../assets/checkatrade_image_10.webp'
-import spinnakerImage from '../assets/checkatrade_image_11.webp'
-import marksImage from '../assets/checkatrade_image_12.webp'
+import spinnakerImage from '../assets/team_photo_1.png'
+import marksImage from '../assets/demolition_site_1.png'
 import carphoneImage from '../assets/checkatrade_image_13.webp'
 
 const CaseStudies = () => {
