@@ -12,7 +12,7 @@ import './App.css'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-black text-white" style={{minHeight: '100vh', backgroundColor: '#000000', color: '#ffffff', display: 'block'}}>
         <Header />
         <main>
           <Routes>
