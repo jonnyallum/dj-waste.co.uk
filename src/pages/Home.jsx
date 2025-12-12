@@ -16,7 +16,7 @@ import {
   Clock,
   Award
 } from 'lucide-react'
-import heroImage from '../assets/checkatrade_image_8.webp'
+import heroImage from '../assets/hero-image.png'
 import wasteImage from '../assets/pexels_waste_management_1.jpg'
 import demolitionImage from '../assets/pexels_demolition_1.jpg'
 
@@ -76,10 +76,12 @@ const Home = () => {
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="max-w-3xl">
             <div className="flex items-center space-x-2 mb-6">
-              <Badge className="bg-blue-600 text-white">
-                <Star className="h-3 w-3 mr-1" />
-                9.93/10 Checkatrade Rating
-              </Badge>
+              <a href="https://www.checkatrade.com/trades/djwasteandrecycling" target="_blank" rel="noopener noreferrer">
+                <Badge className="bg-blue-600 text-white hover:bg-blue-700 cursor-pointer">
+                  <Star className="h-3 w-3 mr-1" />
+                  9.93/10 Checkatrade Rating - View Reviews
+                </Badge>
+              </a>
               <Badge className="bg-green-600 text-white">
                 <Shield className="h-3 w-3 mr-1" />
                 Fully Licensed & Insured
@@ -187,6 +189,54 @@ const Home = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              See What Our <span className="text-blue-400">Customers Say</span>
+            </h2>
+            <p className="text-gray-400 mb-8">
+              Check out our reviews, testimonials, and project gallery
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <a href="https://www.checkatrade.com/trades/djwasteandrecycling" target="_blank" rel="noopener noreferrer" className="block">
+              <Card className="bg-gray-800 border-gray-700 hover:border-blue-400 transition-all duration-300 h-full">
+                <CardContent className="p-8 text-center">
+                  <Award className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Checkatrade</h3>
+                  <div className="flex items-center justify-center mb-4">
+                    <Star className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                    <span className="text-3xl font-bold text-white ml-2">9.93/10</span>
+                  </div>
+                  <p className="text-gray-400 mb-4">View our verified reviews and project gallery</p>
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    View Reviews & Gallery
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </a>
+            
+            <a href="https://www.facebook.com/djwasteandrecycling" target="_blank" rel="noopener noreferrer" className="block">
+              <Card className="bg-gray-800 border-gray-700 hover:border-blue-400 transition-all duration-300 h-full">
+                <CardContent className="p-8 text-center">
+                  <Users className="h-12 w-12 text-blue-400 mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-white mb-2">Facebook</h3>
+                  <p className="text-gray-400 mb-6">Follow us for updates, testimonials, and behind-the-scenes content</p>
+                  <Button className="bg-blue-600 hover:bg-blue-700">
+                    Visit Our Page
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </section>

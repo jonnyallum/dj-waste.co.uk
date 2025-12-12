@@ -17,6 +17,10 @@ import {
 import debenhamsImage from '../assets/checkatrade_image_6.webp'
 import officeImage from '../assets/checkatrade_image_7.webp'
 import teamImage from '../assets/checkatrade_image_8.webp'
+import topshopImage from '../assets/checkatrade_image_10.webp'
+import spinnakerImage from '../assets/checkatrade_image_11.webp'
+import marksImage from '../assets/checkatrade_image_12.webp'
+import carphoneImage from '../assets/checkatrade_image_13.webp'
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -117,7 +121,7 @@ const CaseStudies = () => {
       location: 'Portsmouth',
       duration: '3 days',
       wasteVolume: '18 tonnes',
-      image: debenhamsImage,
+      image: topshopImage,
       challenge: 'Complete retail shelving and display removal',
       scope: [
         'Retail shelving and display removal',
@@ -147,7 +151,7 @@ const CaseStudies = () => {
       location: 'Portsmouth Harbour',
       duration: '2 days',
       wasteVolume: '12 tonnes',
-      image: officeImage,
+      image: spinnakerImage,
       challenge: 'Iconic Portsmouth landmark with challenging access',
       scope: [
         'Commercial kitchen extraction systems',
@@ -177,7 +181,7 @@ const CaseStudies = () => {
       location: 'Havant',
       duration: 'Ongoing',
       wasteVolume: 'Variable',
-      image: teamImage,
+      image: marksImage,
       challenge: 'Flexible collection scheduling with operating hours coordination',
       scope: [
         'Ongoing waste management partnership',
@@ -199,6 +203,36 @@ const CaseStudies = () => {
       ],
       badge: 'Partnership',
       badgeColor: 'bg-indigo-600'
+    },
+    {
+      id: 7,
+      title: 'Carphone Warehouse - Complete Strip Out & Demolition',
+      client: 'National Retail Chain',
+      location: 'Portsmouth',
+      duration: '3 days',
+      wasteVolume: '15 tonnes',
+      image: carphoneImage,
+      challenge: 'Complete retail unit strip-out with fixture removal and disposal',
+      scope: [
+        'Full retail unit strip-out',
+        'Display fixture and shelving removal',
+        'Electrical systems disconnection',
+        'Signage and branding removal'
+      ],
+      execution: [
+        'Systematic dismantling of all retail fixtures',
+        'Safe removal of electrical and lighting systems',
+        'Careful handling of glass displays and counters',
+        'Efficient waste segregation for maximum recycling'
+      ],
+      results: [
+        '3-day completion with zero disruption to adjacent units',
+        '92% waste recycling rate achieved',
+        'Clean handover ready for next tenant',
+        'Client satisfaction leading to additional contracts'
+      ],
+      badge: 'Retail',
+      badgeColor: 'bg-green-600'
     }
   ]
 
@@ -351,7 +385,7 @@ const CaseStudies = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
               <Phone className="h-5 w-5 mr-2" />
-              Call 07458 178097
+              Call 07920 449132
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
               Request Detailed Quote
@@ -364,4 +398,3 @@ const CaseStudies = () => {
 }
 
 export default CaseStudies
-
