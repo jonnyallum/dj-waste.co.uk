@@ -61,33 +61,23 @@ const About = () => {
                 About <span className="text-blue-400">DJ Waste & Demolition</span>
               </h1>
               
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                DJ Waste & Recycling is a small established business, set up by two lifelong friends 
-                from Portsmouth, Jon Allum and Daryl Jennings. Together, they have substantial 
-                experience in the industry.
+              <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+                DJ Waste & Recycling is a small, established business founded by two lifelong friends 
+                from Portsmouth, built on years of hands-on experience in the waste and construction sectors. 
+                The company was created to meet a clear need for reliable, cost-effective waste solutions 
+                delivered with professionalism and care.
               </p>
               
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-400 mt-1" />
-                  <div>
-                    <p className="text-gray-300">
-                      <strong>Jon</strong> has spent a great deal of his career in London, undertaking 
-                      office clearances for some of the largest business establishments in the country.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-green-400 mt-1" />
-                  <div>
-                    <p className="text-gray-300">
-                      <strong>Daryl</strong> had a small building company and was spending a fortune on skip hire. 
-                      He realized there was a gap in the market and got experience working for a local waste firm.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                Our core objective is simple: to minimise the amount of waste sent to landfill by recovering, 
+                recycling, and repurposing materials wherever possible—turning waste into a resource that 
+                delivers real value to our customers.
+              </p>
+              
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                We operate licensed waste and recycling facilities and pride ourselves on extremely competitive 
+                pricing, fast turnaround, and a no-nonsense approach.
+              </p>
               
               <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                 <Phone className="h-4 w-4 mr-2" />
@@ -115,12 +105,87 @@ const About = () => {
               Our <span className="text-blue-400">Mission</span>
             </h2>
             <div className="max-w-4xl mx-auto">
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Our principle objective is to minimise the amount of waste that goes to landfill 
-                and to transform it into a resource that provides value to our customers. We operate 
-                recycling facilities for aggregates, wood, plastic and green waste, ensuring 
-                environmental responsibility in everything we do.
+              <p className="text-xl text-gray-300 leading-relaxed mb-6">
+                DJ Waste & Recycling delivers dependable waste clearance and demolition services with 
+                a commitment to sustainability, value, and getting the job done properly—every time.
               </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div>
+                  <h3 className="text-2xl font-bold text-blue-400 mb-4">Domestic Waste Clearance</h3>
+                  <p className="text-gray-300 mb-4">
+                    We provide comprehensive domestic waste clearance services, covering all types of 
+                    household and residential waste, including:
+                  </p>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      General household waste and house clearances
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Garage, loft and shed clearances
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Garden waste and green waste
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Furniture, white goods and appliances
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      DIY waste, rubble and construction materials
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Wood, plastics, mixed recyclables and scrap metal
+                    </li>
+                  </ul>
+                  <p className="text-gray-300 mt-4">
+                    Whether it's a single item or a full property clearance, we handle the entire process 
+                    efficiently and responsibly.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-2xl font-bold text-blue-400 mb-4">Commercial Demolition & Waste Services</h3>
+                  <p className="text-gray-300 mb-4">
+                    We specialise in commercial demolition and strip-out services, supporting businesses, 
+                    contractors, and property developers with safe, compliant waste removal. Our services include:
+                  </p>
+                  <ul className="space-y-2 text-gray-300">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Soft strip demolitions and internal strip-outs
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Office and commercial unit clearances
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Small-scale structural demolition
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Retail and industrial strip-outs
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Site clearance and preparation
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-4 w-4 text-green-400 mr-2 mt-1 flex-shrink-0" />
+                      Metal recovery, recycling and confidential waste removal
+                    </li>
+                  </ul>
+                  <p className="text-gray-300 mt-4">
+                    All work is carried out with a strong focus on recycling, compliance, and site efficiency.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
