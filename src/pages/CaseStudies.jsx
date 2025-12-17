@@ -17,10 +17,10 @@ import {
 import debenhamsImage from '../assets/checkatrade_image_6.webp'
 import officeImage from '../assets/checkatrade_image_7.webp'
 import teamImage from '../assets/checkatrade_image_8.webp'
-import topshopImage from '../assets/checkatrade_image_10.webp'
+import topshopImage from '../assets/topshop_stripout.webp'
 import spinnakerImage from '../assets/team_photo_1.webp'
-import marksImage from '../assets/demolition_site_1.webp'
-import carphoneImage from '../assets/checkatrade_image_13.webp'
+import marksImage from '../assets/marks_spencer_stripout.webp'
+import carphoneImage from '../assets/carphone_stripout.webp'
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -176,33 +176,33 @@ const CaseStudies = () => {
     },
     {
       id: 6,
-      title: 'Marks & Spencer Havant - Ongoing Partnership',
+      title: 'Marks & Spencer Havant - Retail Strip-Out',
       client: 'Marks & Spencer',
       location: 'Havant',
-      duration: 'Ongoing',
-      wasteVolume: 'Variable',
+      duration: '4 days',
+      wasteVolume: '25 tonnes',
       image: marksImage,
-      challenge: 'Flexible collection scheduling with operating hours coordination',
+      challenge: 'Complete retail unit strip-out with minimal disruption',
       scope: [
-        'Ongoing waste management partnership',
-        'Flexible collection scheduling',
-        'Operating hours coordination',
-        '98% recyclable waste stream management'
+        'Full retail unit clearance',
+        'Fixture and display removal',
+        'Coordinated waste collection',
+        'Professional site handover'
       ],
       execution: [
-        'Regular scheduled collections',
-        'Flexible response to changing needs',
+        'Systematic dismantling of retail fixtures',
+        'Efficient waste segregation and removal',
         'Coordination with store operations',
-        'Comprehensive waste stream analysis'
+        'Comprehensive recycling approach'
       ],
       results: [
-        '98% recyclable waste stream management',
-        'Consistent service delivery',
-        'Long-term partnership established',
-        'Model for other retail partnerships'
+        '98% recyclable waste stream achieved',
+        'Zero disruption to adjacent units',
+        'Project completed on schedule',
+        'Professional handover to next contractor'
       ],
-      badge: 'Partnership',
-      badgeColor: 'bg-indigo-600'
+      badge: 'Retail',
+      badgeColor: 'bg-green-600'
     },
     {
       id: 7,

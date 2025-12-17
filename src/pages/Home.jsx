@@ -95,8 +95,7 @@ const Home = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Professional commercial demolition and waste clearance services. 
-              Trusted by major retailers including Debenhams, Topshop, and M&S.
+              Professional commercial demolition and waste clearance services. Trusted by major retailers including Debenhams, Topshop, M&S and more.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
