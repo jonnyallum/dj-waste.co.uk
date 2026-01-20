@@ -21,6 +21,7 @@ import topshopImage from '../assets/topshop_stripout.webp'
 import spinnakerImage from '../assets/team_photo_1.webp'
 import marksImage from '../assets/marks_spencer_stripout.webp'
 import carphoneImage from '../assets/carphone_stripout.webp'
+import googleImage from '../assets/google_london_office.webp'
 
 const CaseStudies = () => {
   const caseStudies = [
@@ -233,6 +234,38 @@ const CaseStudies = () => {
       ],
       badge: 'Retail',
       badgeColor: 'bg-green-600'
+    },
+    {
+      id: 8,
+      title: 'Google London - Premium Office Fit-Out Clearance',
+      client: 'Google',
+      location: 'London',
+      duration: '6 days',
+      wasteVolume: '52 tonnes',
+      image: googleImage,
+      challenge: 'High-spec tech office clearance with minimal downtime',
+      scope: [
+        'Complete office fit-out removal',
+        'Advanced IT infrastructure dismantling',
+        'Premium furniture and fixtures removal',
+        'Data security compliance throughout'
+      ],
+      execution: [
+        'Systematic clearance of multi-floor premium office space',
+        'Specialized handling of IT equipment and cabling systems',
+        'Careful removal of high-value furniture and fittings',
+        'Coordinated logistics to minimize business disruption',
+        'Full compliance with data protection protocols'
+      ],
+      results: [
+        '96% waste diverted from landfill through specialist recycling',
+        'Zero security incidents or data breaches',
+        '6-day completion with precision scheduling',
+        'Client satisfaction leading to potential future contracts',
+        'Enhanced reputation for handling premium corporate projects'
+      ],
+      badge: 'Tech Corporate',
+      badgeColor: 'bg-yellow-600'
     }
   ]
 
