@@ -240,7 +240,7 @@ function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-bg.png"
+          src="/images/hero-bg.jpg"
           alt=""
           className="w-full h-full object-cover"
         />

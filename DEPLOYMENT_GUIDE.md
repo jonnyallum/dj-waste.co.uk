@@ -1,17 +1,18 @@
-# CD Waste Deployment Guide
+# DJ Waste Deployment Guide
 
-This project is deployed to Hostinger using a "Zip & Ship" method to bypass slow file transfers and connection limits.
+This project is deployed to Hostinger using a "Zip & Ship" method.
 
-## Prerequisites
-- Windows PowerShell
-- `curl` installed and available in PATH
-- Hostinger SFTP Credentials
+## Hostinger SSH Credentials
+- **IP**: 92.112.189.250
+- **Port**: 65002
+- **Username**: u384342620
+- **Domain Path**: `/home/u384342620/domains/dj-waste.co.uk/public_html/`
 
 ## Quick Deploy Steps
 
 ### 1. Build the Project
 ```powershell
-cd client
+cd c:\Users\jonny\DJ Waste\dj-waste-app
 npm install --legacy-peer-deps
 npm run build
 # Output will be in dist/public
@@ -22,33 +23,28 @@ npm run build
 Compress-Archive -Path "dist\public\*" -DestinationPath "site_deploy.zip" -Force
 ```
 
-### 3. Upload Zip
+### 3. Upload Zip via SFTP
 ```powershell
-# Replace USER, PASS, DOMAIN, IP with actual credentials
-curl.exe -k -T "site_deploy.zip" -u USER:PASS sftp://IP:PORT/home/USER/domains/DOMAIN/public_html/site_deploy.zip
+curl.exe -k -T "site_deploy.zip" -u "u384342620:YOUR_PASSWORD" "sftp://92.112.189.250:65002/home/u384342620/domains/dj-waste.co.uk/public_html/site_deploy.zip"
 ```
 
 ### 4. Upload Unzip Script
-Create `unzip.php`:
-```php
-<?php
-$zip = new ZipArchive;
-if ($zip->open('site_deploy.zip') === TRUE) {
-    $zip->extractTo('./');
-    $zip->close();
-    echo 'Done';
-} else echo 'Error';
-?>
-```
-Upload it:
 ```powershell
-curl.exe -k -T "unzip.php" -u USER:PASS sftp://IP:PORT/home/USER/domains/DOMAIN/public_html/unzip.php
+curl.exe -k -T "unzip.php" -u "u384342620:YOUR_PASSWORD" "sftp://92.112.189.250:65002/home/u384342620/domains/dj-waste.co.uk/public_html/unzip.php"
 ```
 
-### 5. Execute & Cleanup
-Visit `https://cd-waste.co.uk/unzip.php` in browser.
-Then delete `site_deploy.zip` and `unzip.php` via SFTP or a cleanup script.
+### 5. Execute & Auto-Cleanup
+Visit `https://dj-waste.co.uk/unzip.php` in browser or run:
+```powershell
+curl.exe -k "https://dj-waste.co.uk/unzip.php"
+```
+The script auto-deletes itself and the zip after extraction.
+
+## Live Site
+- **URL**: https://dj-waste.co.uk
+- **Last Deployed**: 2026-01-30
 
 ## Important Notes
-- **MIME Types**: The `.htaccess` file handles correct JS/CSS MIME types. Ensure it's not overwritten by a default one (Vite build doesn't generate one, so it persists).
-- **Gallery Images**: Stored in `images/`. If replacing visuals, ensure names match `Home.tsx`.
+- **MIME Types**: The `.htaccess` file handles correct JS/CSS MIME types.
+- **Gallery Images**: Stored in `images/`. Ensure names match `Home.tsx`.
+- **SSL**: Managed by Hostinger's free SSL.
