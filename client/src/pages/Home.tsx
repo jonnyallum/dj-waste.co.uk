@@ -32,6 +32,7 @@ import {
   Users,
   X,
   MessageCircle,
+  Facebook,
 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 
@@ -434,7 +435,7 @@ function ServicesSection() {
     },
     {
       icon: Building2,
-      title: "Demolition Havant",
+      title: "Demolition",
       description:
         "Precision demolition of sheds, garages, and small structures in Havant and Portsmouth. Safe, efficient, and including full waste removal.",
     },
@@ -677,6 +678,19 @@ function AboutSection() {
                 >
                   <CheckCircle2 className="w-5 h-5 mr-2" />
                   View on Checkatrade
+                </Button>
+              </a>
+              <a
+                href="https://www.facebook.com/djwasterecycling/?locale=en_GB"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  className="bg-[#1877F2] hover:bg-[#1877F2]/90 text-white glow-blue-hover"
+                >
+                  <Facebook className="w-5 h-5 mr-2" />
+                  Facebook
                 </Button>
               </a>
             </motion.div>
@@ -1396,6 +1410,15 @@ function Footer() {
                 <CheckCircle2 className="w-4 h-4" />
                 Checkatrade Profile
               </a>
+              <a
+                href="https://www.facebook.com/djwasterecycling/?locale=en_GB"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#1877F2] flex items-center gap-2"
+              >
+                <Facebook className="w-4 h-4" />
+                Facebook
+              </a>
             </div>
           </div>
         </div>
@@ -1424,6 +1447,7 @@ export default function Home() {
       <Navigation />
       <HeroSection />
       <ServicesSection />
+      <CaseStudySection />
       <AboutSection />
       <GallerySection />
       <CheckatradeSection />
