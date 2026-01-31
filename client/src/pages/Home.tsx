@@ -517,70 +517,169 @@ function ServicesSection() {
 
 // Featured Case Study Section
 function CaseStudySection() {
+  const projects = [
+    {
+      id: "topshop",
+      title: "Topshop Portsmouth",
+      subtitle: "Retail Transformation",
+      description:
+        "A high-velocity decommissioning and waste clearance project for a major retail space. We managed the complete extraction of fixtures, fittings, and internal debris while maintaining strict site safety and environmental compliance.",
+      logo: "/images/topshop-logo.png",
+      stats: [
+        { value: "48 Hours", label: "Site Clearance" },
+        { value: "100%", label: "Compliant Disposal" },
+        { value: "Zero", label: "Incidents" },
+      ],
+      color: "#00D4FF",
+    },
+    {
+      id: "debenhams",
+      title: "Debenhams",
+      subtitle: "Department Store Decommission",
+      description:
+        "Large-scale strip-out of the iconic department store. This multi-phase project involved the removal of heavy shop fittings, elevators, and non-structural elements across multiple floors, ensuring maximum recycling of metal and glass assets.",
+      logo: "/images/debenhams-logo.png",
+      stats: [
+        { value: "5 Floors", label: "Cleared" },
+        { value: "250 Tons", label: "Recycled Material" },
+        { value: "1 Week", label: "Completion Time" },
+      ],
+      color: "#ffffff",
+    },
+    {
+      id: "spinnaker",
+      title: "Spinnaker Tower",
+      subtitle: "High-Access Clearance",
+      description:
+        "Specialist waste removal for Portsmouth's most famous landmark. Operating at height and within strict public safety zones, our team executed a precise clearance operation with zero disruption to tourism or operations.",
+      logo: "/images/spinnaker-logo.png",
+      stats: [
+        { value: "170m", label: "Working Height" },
+        { value: "Night", label: "Operations Only" },
+        { value: "100%", label: "Safety Record" },
+      ],
+      color: "#d4af37", // Gold-ish for Spinnaker
+    },
+    {
+      id: "carphone",
+      title: "Carphone Warehouse",
+      subtitle: "Secure Site Decommission",
+      description:
+        "Nationwide project support for secure site decommissioning. Handling WEEE waste, confidential materials, and shop fittings with a focus on data security and environmental responsibility.",
+      logo: "/images/carphone-logo.png",
+      stats: [
+        { value: "Secure", label: "WEEE Disposal" },
+        { value: "Nationwide", label: "Logistics" },
+        { value: "Eco", label: "Certified" },
+      ],
+      color: "#005EB8",
+    },
+  ];
+
+  const [activeProject, setActiveProject] = useState(0);
+
   return (
     <section className="py-24 relative overflow-hidden">
       <div className="container relative z-10">
-        <div className="glass-card overflow-hidden rounded-3xl">
-          <div className="grid lg:grid-cols-2">
-            <div className="p-8 lg:p-16 flex flex-col justify-center">
-              <motion.span
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-[#0070F3] text-sm font-semibold tracking-wider uppercase mb-4"
-              >
-                Featured Project
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
-              >
-                Topshop Portsmouth - <br />
-                <span className="text-gradient">Retail Transformation</span>
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-white/60 text-lg mb-8 leading-relaxed"
-              >
-                A high-velocity decommissioning and waste clearance project for a major retail space.
-                We managed the complete extraction of fixtures, fittings, and internal debris while
-                maintaining strict site safety and environmental compliance.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="flex flex-wrap gap-8"
-              >
-                <div>
-                  <div className="text-2xl font-bold text-white">48 Hours</div>
-                  <div className="text-white/40 text-sm">Site Clearance</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-white">100%</div>
-                  <div className="text-white/40 text-sm">Compliant Disposal</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-white">Zero</div>
-                  <div className="text-white/40 text-sm">Incidents</div>
-                </div>
-              </motion.div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="mb-12 text-center"
+        >
+          <motion.span
+            variants={fadeInUp}
+            className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase mb-4"
+          >
+            Major Projects
+          </motion.span>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
+          >
+            Trusted by <span className="text-gradient">Industry Giants</span>
+          </motion.h2>
+        </motion.div>
+
+        <div className="glass-card overflow-hidden rounded-3xl border border-white/10">
+          <div className="grid lg:grid-cols-12 min-h-[600px]">
+            {/* Project Navigation (Left Side) */}
+            <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white/10 bg-[#050508]/50 flex flex-col">
+              {projects.map((project, index) => (
+                <button
+                  key={project.id}
+                  onClick={() => setActiveProject(index)}
+                  className={`flex-1 p-6 text-left transition-all duration-300 relative group flex items-center gap-4 ${activeProject === index
+                      ? "bg-white/5"
+                      : "hover:bg-white/5 opacity-60 hover:opacity-100"
+                    }`}
+                >
+                  {/* Active Indicator Line */}
+                  {activeProject === index && (
+                    <motion.div
+                      layoutId="activeIndicator"
+                      className="absolute left-0 top-0 bottom-0 w-1 bg-[#00D4FF]"
+                    />
+                  )}
+
+                  {/* Logo Thumbnail (Grayscale unless active) */}
+                  <div className={`w-12 h-12 rounded-lg bg-white p-2 flex items-center justify-center transition-all ${activeProject === index ? "grayscale-0" : "grayscale"}`}>
+                    <img src={project.logo} alt={project.title} className="max-w-full max-h-full object-contain" />
+                  </div>
+
+                  <div>
+                    <h3 className={`font-semibold transition-colors ${activeProject === index ? "text-white" : "text-white/80"}`}>
+                      {project.title}
+                    </h3>
+                    <p className="text-xs text-white/40">{project.subtitle}</p>
+                  </div>
+                </button>
+              ))}
             </div>
-            <div className="relative min-h-[400px] bg-white flex items-center justify-center p-12">
-              <motion.img
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                src="/images/topshop-logo.png"
-                alt="Topshop Logo"
-                className="max-w-full max-h-[150px] object-contain"
-              />
+
+            {/* Project Details (Right Side) */}
+            <div className="lg:col-span-8 p-8 lg:p-16 flex flex-col justify-center relative bg-[url('/images/hero-bg.png')] bg-cover bg-center">
+              {/* Overlay for readability */}
+              <div className="absolute inset-0 bg-[#050508]/90" />
+
+              <div className="relative z-10">
+                <motion.div
+                  key={activeProject} // Triggers animation on change
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <span className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase mb-4 inline-block">
+                    Featured Case Study
+                  </span>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                    {projects[activeProject].title}
+                  </h2>
+                  <p className="text-white/70 text-lg mb-10 leading-relaxed max-w-2xl">
+                    {projects[activeProject].description}
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+                    {projects[activeProject].stats.map((stat, i) => (
+                      <div key={i} className="glass p-4 rounded-xl border border-white/5">
+                        <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                        <div className="text-white/40 text-sm">{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="h-16 bg-white rounded-lg p-3 inline-flex items-center justify-center">
+                      <img
+                        src={projects[activeProject].logo}
+                        alt={`${projects[activeProject].title} Logo`}
+                        className="max-h-full max-w-[150px] object-contain"
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
