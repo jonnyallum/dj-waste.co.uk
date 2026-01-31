@@ -1,0 +1,44 @@
+name: Deploy to Hostinger
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+
+            - name: Install Dependencies
+              working-directory: ./dj-waste-app
+              run: npm ci --legacy-peer-deps
+
+            - name: Build
+              working-directory: ./dj-waste-app
+              run: npm run build
+
+            - name: Deploy via rsync
+              run: |
+                  mkdir -p ~/.ssh/
+                  echo "${{ secrets.SSH_KEY }}" > ~/.ssh/deploy_key
+                  chmod 600 ~/.ssh/deploy_key
+
+                  # Add Hostinger to known_hosts to avoid interactive prompt
+                  ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+                  # Sync 'dist/public/' content to 'public_html/' on server
+                  # Note: The slash at the end of source 'public/' counts!
+                  rsync -avz --delete \
+                    --exclude '.git' \
+                    --exclude '.github' \
+                    --exclude 'node_modules' \
+                    -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
+                    ./dj-waste-app/dist/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/
