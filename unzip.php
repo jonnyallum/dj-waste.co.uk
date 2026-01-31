@@ -2,53 +2,77 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-function deleteDir($dirPath)
+function rmdir_recursive($dir)
 {
-    if (!is_dir($dirPath))
+    if (!is_dir($dir))
         return;
-    $files = array_diff(scandir($dirPath), array('.', '..'));
-    foreach ($files as $file) {
-        (is_dir("$dirPath/$file")) ? deleteDir("$dirPath/$file") : unlink("$dirPath/$file");
+    foreach (scandir($dir) as $file) {
+        if ('.' === $file || '..' === $file)
+            continue;
+        if (is_dir("$dir/$file"))
+            rmdir_recursive("$dir/$file");
+        else
+            unlink("$dir/$file");
     }
-    return rmdir($dirPath);
+    rmdir($dir);
 }
 
-echo "Starting cleanup...<br>";
-deleteDir('assets');
-deleteDir('images');
-echo "Cleanup done.<br>";
+echo "Starting deployment cleanup...<br>";
+// These are the folders from your screenshot that shouldn't be here
+$to_delete = ['client', 'server', 'shared', 'patches', 'test_extract', '.git', 'assets', 'images'];
+foreach ($to_delete as $folder) {
+    if (is_dir($folder)) {
+        rmdir_recursive($folder);
+        echo "Deleted Folder: $folder<br>";
+    }
+}
+
+// Delete loose source files from your screenshot
+$files_to_delete = ['package.json', 'package-lock.json', 'pnpm-lock.yaml', 'tsconfig.json', 'tsconfig.node.json', 'vite.config.ts', 'Ideas.md', 'DEPLOYMENT_GUIDE.md'];
+foreach ($files_to_delete as $f) {
+    if (is_file($f)) {
+        unlink($f);
+        echo "Deleted File: $f<br>";
+    }
+}
+
+echo "Cleanup Finished. Extracting production bundle...<br>";
 
 $zip = new ZipArchive;
 if ($zip->open('site_deploy.zip') === TRUE) {
-    for ($i = 0; $i < $zip->numFiles; $i++) {
-        $filename = $zip->getNameIndex($i);
-        $fileinfo = pathinfo($filename);
-        if (!is_dir($fileinfo['dirname'])) {
-            mkdir($fileinfo['dirname'], 0755, true);
+    // Standard extraction
+    if ($zip->extractTo('./')) {
+        echo 'Extraction Successful!<br>';
+    } else {
+        echo 'Standard Extraction Failed, attempting manual loop...<br>';
+        for ($i = 0; $i < $zip->numFiles; $i++) {
+            $filename = $zip->getNameIndex($i);
+            $fileinfo = pathinfo($filename);
+            if (!is_dir($fileinfo['dirname'])) {
+                mkdir($fileinfo['dirname'], 0755, true);
+            }
+            if (substr($filename, -1) !== "/") {
+                copy("zip://site_deploy.zip#$filename", $filename);
+            }
         }
-        if (substr($filename, -1) !== "/") {
-            copy("zip://site_deploy.zip#$filename", $filename);
-        }
+        echo "Manual Loop Complete!<br>";
     }
     $zip->close();
-    echo 'Manual Extraction Complete!<br>';
 
-    echo "Verifying assets...<br>";
-    if (file_exists('assets/index-9Rp78z5K.js')) {
-        echo "FOUND: assets/index-9Rp78z5K.js (" . filesize('assets/index-9Rp78z5K.js') . " bytes)<br>";
+    echo "Verifying Deployment...<br>";
+    if (file_exists('index.html')) {
+        echo "✅ index.html FOUND!<br>";
     } else {
-        echo "NOT FOUND: assets/index-9Rp78z5K.js<br>";
+        echo "❌ index.html NOT FOUND!<br>";
     }
 
-    if (file_exists('images/dj-logo.png')) {
-        echo "FOUND: images/dj-logo.png<br>";
-    } else {
-        echo "NOT FOUND: images/dj-logo.png<br>";
+    if (is_dir('assets')) {
+        echo "✅ assets/ folder FOUND!<br>";
     }
 
     unlink('site_deploy.zip');
     unlink(__FILE__);
 } else {
-    echo 'Failed to open site_deploy.zip';
+    echo '❌ Failed to open site_deploy.zip';
 }
 ?>
