@@ -1,12 +1,12 @@
 /**
  * DJ Waste & Demolition - Single Page Website
  * 
- * DESIGN PHILOSOPHY: Neon Noir (Blue Variant)
- * - Deep void black backgrounds (#050508)
- * - Neon blue CTAs (#00D4FF)
- * - Electric cyber blue/indigo accents
- * - Glass morphism and atmospheric depth
- * - Smooth, fluid animations
+ * DESIGN PHILOSOPHY: Premium Industrial
+ * - Professional, high-conviction aesthetic with structural integrity
+ * - Deep charcoal and industrial slate backgrounds
+ * - Sharp, precise borders and authoritative typography
+ * - Clean blue and aluminum accents
+ * - Refined shadows and deliberate negative space
  */
 
 import { Button } from "@/components/ui/button";
@@ -201,13 +201,13 @@ function Navigation() {
           <img
             src="/images/dj-logo.png"
             alt="DJ Waste & Demolition"
-            className="w-10 h-10 rounded-full object-cover border-2 border-[#00D4FF]/50"
+            className="w-10 h-10 rounded-sm object-cover border border-industrial-blue/50"
           />
           <div className="hidden sm:block">
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-[#00D4FF] transition-colors">
+            <span className="text-xl font-black tracking-tight text-white group-hover:text-industrial-blue transition-colors uppercase">
               DJ
             </span>
-            <span className="text-xl font-light text-white/80"> Waste & Demolition</span>
+            <span className="text-xl font-light text-white/80 uppercase tracking-tight"> Waste & Demolition</span>
           </div>
         </a>
 
@@ -224,8 +224,8 @@ function Navigation() {
             </a>
           ))}
           <a href="tel:07920449132">
-            <Button className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-black glow-blue-hover transition-all">
-              <Phone className="w-4 h-4 mr-2" />
+            <Button className="bg-industrial-blue hover:bg-industrial-blue/90 text-white industrial-blue-glow transition-all rounded-sm font-black uppercase tracking-widest text-[10px]">
+              <Phone className="w-3 h-3 mr-2" />
               07920 449 132
             </Button>
           </a>
@@ -286,16 +286,18 @@ function HeroSection() {
         <img
           src="/images/hero-bg.jpg"
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover grayscale opacity-40 contrast-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050508]/80 via-[#050508]/60 to-[#050508]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/90 via-charcoal/70 to-charcoal" />
       </div>
 
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-[100px] animate-pulse delay-1000" />
-      </div>
+      {/* Industrial Grid Background (Distinct from CD Waste blurs) */}
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: 'linear-gradient(var(--industrial-blue) 1px, transparent 1px), linear-gradient(90deg, var(--industrial-blue) 1px, transparent 1px)',
+          backgroundSize: '80px 80px'
+        }}
+      />
 
       <div className="container relative z-10 pt-20">
         <motion.div
@@ -305,29 +307,29 @@ function HeroSection() {
           className="max-w-4xl mx-auto text-center"
         >
           {/* Badge */}
-          <motion.div variants={fadeInUp} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-white/80">
-              <Star className="w-4 h-4 text-[#00D4FF]" fill="#00D4FF" />
-              10/10 Rating on Checkatrade
+          <motion.div variants={fadeInUp} className="mb-6 text-center">
+            <span className="inline-flex items-center gap-3 px-6 py-2 rounded-sm glass border-industrial-blue/30 text-[10px] font-black tracking-[.3em] text-industrial-blue uppercase">
+              <Star className="w-3 h-3 text-industrial-blue" fill="currentColor" />
+              10/10 RATING ON CHECKATRADE
             </span>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h1
             variants={fadeInUp}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-6 leading-none tracking-tighter uppercase"
           >
-            Portsmouth's Premier Waste &{" "}
-            <span className="text-gradient">Demolition Specialists</span>
+            Portsmouth's <br />
+            <span className="text-industrial-blue">Industrial Waste</span> Specialists
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
             variants={fadeInUp}
-            className="text-lg sm:text-xl text-white/70 mb-8 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-white/60 mb-12 max-w-2xl mx-auto font-medium uppercase tracking-tight"
           >
-            A high-performance family business serving Havant, Waterlooville, and Hampshire.
-            Elite waste clearance and demolition services with zero friction.
+            A high-performance family business delivering precision demolition
+            and elite waste logistics with zero friction.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -338,10 +340,10 @@ function HeroSection() {
             <a href="tel:07920449132">
               <Button
                 size="lg"
-                className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-black text-lg px-8 py-6 glow-blue pulse-glow magnetic-hover shimmer relative overflow-hidden"
+                className="bg-industrial-blue hover:bg-industrial-blue/90 text-white text-lg px-12 py-8 industrial-blue-glow pulse-industrial rounded-sm font-black uppercase tracking-widest relative overflow-hidden"
               >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Now: 07920 449 132
+                <Phone className="w-5 h-5 mr-3" />
+                TRANSMIT SIGNAL: 07920 449 132
               </Button>
             </a>
             <a
@@ -362,18 +364,18 @@ function HeroSection() {
           {/* Trust Badges */}
           <motion.div
             variants={fadeInUp}
-            className="mt-12 flex flex-wrap justify-center gap-6 text-white/60"
+            className="mt-16 flex flex-wrap justify-center gap-12 text-[10px] font-black tracking-[.4em] text-white/40 uppercase"
           >
-            <div className="flex items-center gap-2">
-              <Shield className="w-5 h-5 text-[#00D4FF]" />
+            <div className="flex items-center gap-4 group">
+              <Shield className="w-5 h-5 text-industrial-blue group-hover:scale-110 transition-transform" />
               <span>Fully Licensed</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Recycle className="w-5 h-5 text-[#00D4FF]" />
+            <div className="flex items-center gap-4 group">
+              <Recycle className="w-5 h-5 text-industrial-blue group-hover:scale-110 transition-transform" />
               <span>95% Recycled</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-[#00D4FF]" />
+            <div className="flex items-center gap-4 group">
+              <Clock className="w-5 h-5 text-industrial-blue group-hover:scale-110 transition-transform" />
               <span>Same Day Service</span>
             </div>
           </motion.div>
@@ -470,15 +472,15 @@ function ServicesSection() {
         >
           <motion.span
             variants={fadeInUp}
-            className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase"
+            className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase"
           >
-            What We Do
+            Operational Spectrum
           </motion.span>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-black text-white mt-4 mb-6 uppercase tracking-tighter"
           >
-            Our Services
+            Core Services
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -498,14 +500,14 @@ function ServicesSection() {
         >
           {services.map((service, index) => (
             <motion.div key={index} variants={scaleIn}>
-              <Card className="glass-card p-6 h-full group hover:border-[#00D4FF]/30 transition-all duration-300 tilt-card border-gradient relative overflow-visible">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#00D4FF]/20 to-[#00D4FF]/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,212,255,0.3)]">
-                  <service.icon className="w-7 h-7 text-[#00D4FF]" />
+              <Card className="glass-card p-8 h-full group hover:border-industrial-blue/50 transition-all duration-500 industrial-shadow border-gradient rounded-sm overflow-hidden">
+                <div className="w-16 h-16 rounded-sm bg-industrial-slate flex items-center justify-center mb-8 border border-white/5 group-hover:bg-industrial-blue group-hover:text-white transition-all duration-500 industrial-blue-glow">
+                  <service.icon className="w-8 h-8 text-industrial-blue group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
+                <h3 className="text-xl font-black text-white mb-4 uppercase tracking-tight">
                   {service.title}
                 </h3>
-                <p className="text-white/60 leading-relaxed">{service.description}</p>
+                <p className="text-white/50 leading-relaxed font-medium text-sm">{service.description}</p>
               </Card>
             </motion.div>
           ))}
@@ -596,9 +598,9 @@ function CaseStudySection() {
           </motion.span>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter"
           >
-            Trusted by <span className="text-gradient">Industry Giants</span>
+            Strategic <span className="text-industrial-blue">Partnerships</span>
           </motion.h2>
         </motion.div>
 
@@ -611,15 +613,15 @@ function CaseStudySection() {
                   key={project.id}
                   onClick={() => setActiveProject(index)}
                   className={`flex-1 p-6 text-left transition-all duration-300 relative group flex items-center gap-4 ${activeProject === index
-                      ? "bg-white/5"
-                      : "hover:bg-white/5 opacity-60 hover:opacity-100"
+                    ? "bg-white/5"
+                    : "hover:bg-white/5 opacity-60 hover:opacity-100"
                     }`}
                 >
                   {/* Active Indicator Line */}
                   {activeProject === index && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="absolute left-0 top-0 bottom-0 w-1 bg-[#00D4FF]"
+                      className="absolute left-0 top-0 bottom-0 w-1 bg-industrial-blue"
                     />
                   )}
 
@@ -650,10 +652,10 @@ function CaseStudySection() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  <span className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase mb-4 inline-block">
-                    Featured Case Study
+                  <span className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase mb-4 inline-block">
+                    Operational Dossier
                   </span>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight">
                     {projects[activeProject].title}
                   </h2>
                   <p className="text-white/70 text-lg mb-10 leading-relaxed max-w-2xl">
@@ -720,16 +722,16 @@ function AboutSection() {
           >
             <motion.span
               variants={fadeInUp}
-              className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase"
+              className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase"
             >
-              About Us
+              Company Profile
             </motion.span>
             <motion.h2
               variants={fadeInUp}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 mb-6"
+              className="text-3xl sm:text-4xl md:text-6xl font-black text-white mt-4 mb-6 uppercase tracking-tighter"
             >
-              Your Elite Waste &{" "}
-              <span className="text-[#00D4FF]">Demolition Partner</span>
+              Elite Infrastructure <br />
+              <span className="text-industrial-blue">& Deployment</span>
             </motion.h2>
             <motion.div variants={fadeInUp} className="space-y-4 text-white/70">
               <p>
@@ -759,10 +761,10 @@ function AboutSection() {
               >
                 <Button
                   size="lg"
-                  className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-white glow-blue-hover magnetic-hover shimmer"
+                  className="bg-industrial-blue hover:bg-industrial-blue/90 text-white industrial-blue-glow rounded-sm font-black uppercase tracking-widest"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Get Free Quote
+                  <Phone className="w-5 h-5 mr-3" />
+                  INITIATE QUOTE
                 </Button>
               </a>
               <a
@@ -773,10 +775,10 @@ function AboutSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-[#00D4FF]/50 text-[#00D4FF] hover:bg-[#00D4FF]/10"
+                  className="border-industrial-blue/30 text-industrial-blue hover:bg-industrial-blue/10 rounded-sm font-black uppercase tracking-widest"
                 >
-                  <CheckCircle2 className="w-5 h-5 mr-2" />
-                  View on Checkatrade
+                  <CheckCircle2 className="w-5 h-5 mr-3" />
+                  VERIFY ON CHECKATRADE
                 </Button>
               </a>
               <a
@@ -866,15 +868,15 @@ function GallerySection() {
         >
           <motion.span
             variants={fadeInUp}
-            className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase"
+            className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase"
           >
-            Our Work
+            Visual Evidence
           </motion.span>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-black text-white mt-4 mb-6 uppercase tracking-tighter"
           >
-            Before & After Gallery
+            Operational Deployment
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -886,9 +888,9 @@ function GallerySection() {
 
           {/* Checkatrade Badge */}
           <motion.div variants={fadeInUp} className="mt-6 flex items-center justify-center gap-3">
-            <div className="flex items-center gap-2 px-4 py-2 glass rounded-full">
-              <CheckCircle2 className="w-5 h-5 text-[#00D4FF]" />
-              <span className="text-white/80 text-sm">Photos from our Checkatrade profile</span>
+            <div className="flex items-center gap-3 px-6 py-2 glass rounded-sm border border-industrial-blue/20">
+              <CheckCircle2 className="w-5 h-5 text-industrial-blue" />
+              <span className="text-white/80 text-[10px] uppercase font-black tracking-widest">VERIFIED DEPLOYMENTS FROM CHECKATRADE</span>
             </div>
           </motion.div>
         </motion.div>
@@ -916,11 +918,11 @@ function GallerySection() {
 
               {/* Type Badge */}
               <div className="absolute top-3 left-3">
-                <span className={`px-2 py-1 text-xs font-semibold rounded-full ${image.type === "before" ? "bg-[#00D4FF]/80 text-white" :
-                  image.type === "after" ? "bg-[#00D4FF]/80 text-white" :
+                <span className={`px-3 py-1 text-[9px] font-black uppercase tracking-widest rounded-sm ${image.type === "before" ? "bg-red-600/80 text-white" :
+                  image.type === "after" ? "bg-industrial-blue/80 text-white" :
                     "bg-white/20 text-white"
                   }`}>
-                  {image.type === "before" ? "Before" : image.type === "after" ? "After" : "Service"}
+                  {image.type === "before" ? "ORIGIN" : image.type === "after" ? "REFINED" : "OPERATIONAL"}
                 </span>
               </div>
 
@@ -956,10 +958,10 @@ function GallerySection() {
             >
               <Button
                 size="lg"
-                className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#050508] font-semibold glow-blue-hover"
+                className="bg-industrial-blue hover:bg-industrial-blue/90 text-white font-black uppercase tracking-widest rounded-sm industrial-blue-glow"
               >
-                <CheckCircle2 className="w-5 h-5 mr-2" />
-                View All Photos on Checkatrade
+                <CheckCircle2 className="w-5 h-5 mr-3" />
+                DIVE INTO THE DOSSIER
               </Button>
             </a>
             <button
@@ -1120,28 +1122,28 @@ function CheckatradeSection() {
 
           <motion.div
             variants={scaleIn}
-            className="inline-block glass-card p-8 sm:p-12 rounded-3xl"
+            className="inline-block glass-card p-8 sm:p-12 rounded-sm border-gradient"
           >
-            <div className="text-6xl sm:text-8xl font-bold text-gradient mb-4">
-              10<span className="text-3xl sm:text-4xl text-white/60">/10</span>
+            <div className="text-6xl sm:text-8xl font-black text-industrial-blue mb-4 uppercase tracking-tighter">
+              10<span className="text-3xl sm:text-4xl text-white/40">/10</span>
             </div>
-            <p className="text-white/60 text-lg mb-8">
-              Perfect Customer Rating from verified reviews
+            <p className="text-white/40 text-xs font-black uppercase tracking-[.4em] mb-12">
+              PERFECT OPERATIONAL RATING
             </p>
 
             {/* Rating Breakdown */}
-            <div className="grid grid-cols-3 gap-6 mb-8 text-center">
+            <div className="grid grid-cols-3 gap-8 mb-12 text-center">
               <div>
-                <div className="text-2xl font-bold text-[#00D4FF]">9.88</div>
-                <div className="text-white/50 text-sm">Quality</div>
+                <div className="text-2xl font-black text-industrial-blue mb-1">9.88</div>
+                <div className="text-white/40 text-[10px] uppercase font-bold tracking-widest">Quality</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[#00D4FF]">9.88</div>
-                <div className="text-white/50 text-sm">Reliability</div>
+                <div className="text-2xl font-black text-industrial-blue mb-1">9.88</div>
+                <div className="text-white/40 text-[10px] uppercase font-bold tracking-widest">Reliability</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[#00D4FF]">9.94</div>
-                <div className="text-white/50 text-sm">Communication</div>
+                <div className="text-2xl font-black text-industrial-blue mb-1">9.94</div>
+                <div className="text-white/40 text-[10px] uppercase font-bold tracking-widest">Communication</div>
               </div>
             </div>
 
@@ -1154,10 +1156,10 @@ function CheckatradeSection() {
             >
               <Button
                 size="lg"
-                className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-[#050508] font-semibold glow-blue magnetic-hover shimmer"
+                className="bg-industrial-blue hover:bg-industrial-blue/90 text-white font-black uppercase tracking-widest rounded-sm industrial-blue-glow"
               >
-                <CheckCircle2 className="w-5 h-5 mr-2" />
-                View Our Checkatrade Profile
+                <CheckCircle2 className="w-5 h-5 mr-3" />
+                VERIFY REVIEWS
               </Button>
             </a>
           </motion.div>
@@ -1220,15 +1222,15 @@ function TestimonialsSection() {
         >
           <motion.span
             variants={fadeInUp}
-            className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase"
+            className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase"
           >
-            Testimonials
+            Social Confirmation
           </motion.span>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-black text-white mt-4 mb-6 uppercase tracking-tighter"
           >
-            What Our Customers Say
+            Verified Intelligence
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -1317,15 +1319,15 @@ function ContactSection() {
         >
           <motion.span
             variants={fadeInUp}
-            className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase"
+            className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase"
           >
-            Get Started
+            Terminal Access
           </motion.span>
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-4 mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl font-black text-white mt-4 mb-6 uppercase tracking-tighter"
           >
-            Ready to Clear Your Space?
+            Ready to <span className="text-industrial-blue">Deploy?</span>
           </motion.h2>
           <motion.p
             variants={fadeInUp}
@@ -1343,10 +1345,10 @@ function ContactSection() {
             <a href="tel:07920449132">
               <Button
                 size="lg"
-                className="bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-black text-lg px-8 py-7 glow-blue pulse-glow magnetic-hover shimmer"
+                className="bg-industrial-blue hover:bg-industrial-blue/90 text-white text-lg px-8 py-7 industrial-blue-glow rounded-sm font-black uppercase tracking-widest"
               >
                 <Phone className="w-6 h-6 mr-3" />
-                07920 449 132
+                CONNECT NOW
               </Button>
             </a>
             <a
@@ -1356,12 +1358,12 @@ function ContactSection() {
             >
               <Button
                 size="lg"
-                className="bg-[#25D366] hover:bg-[#25D366]/90 text-white text-lg px-8 py-7 magnetic-hover shimmer"
+                className="bg-[#25D366] hover:bg-[#25D366]/90 text-white text-lg px-8 py-7 rounded-sm font-black uppercase tracking-widest shadow-lg shadow-[#25D366]/20"
               >
                 <svg viewBox="0 0 24 24" className="w-6 h-6 mr-3 fill-current">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
-                WhatsApp Us
+                ENCRYPTED CHAT (WA)
               </Button>
             </a>
             <a
@@ -1372,10 +1374,10 @@ function ContactSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-[#00D4FF]/50 text-[#00D4FF] hover:bg-[#00D4FF]/10 text-lg px-8 py-7 magnetic-hover"
+                className="border-industrial-blue/30 text-industrial-blue hover:bg-industrial-blue/10 text-lg px-8 py-7 rounded-sm font-black uppercase tracking-widest"
               >
                 <CheckCircle2 className="w-6 h-6 mr-3" />
-                Checkatrade
+                VERIFICATION
               </Button>
             </a>
           </motion.div>
@@ -1385,22 +1387,22 @@ function ContactSection() {
             variants={fadeInUp}
             className="grid sm:grid-cols-3 gap-6"
           >
-            <div className="glass-card p-6 rounded-xl">
-              <MapPin className="w-8 h-8 text-[#00D4FF] mx-auto mb-3" />
-              <h3 className="text-white font-semibold mb-1">Location</h3>
-              <p className="text-white/60">Havant, Hampshire</p>
+            <div className="glass-card p-6 rounded-sm border border-industrial-blue/10">
+              <MapPin className="w-8 h-8 text-industrial-blue mx-auto mb-3" />
+              <h3 className="text-white font-black uppercase tracking-widest text-xs mb-1">Operational Area</h3>
+              <p className="text-white/40 text-sm">Havant & Portsmouth</p>
             </div>
-            <div className="glass-card p-6 rounded-xl">
-              <Phone className="w-8 h-8 text-[#00D4FF] mx-auto mb-3" />
-              <h3 className="text-white font-semibold mb-1">Phone</h3>
-              <a href="tel:07920449132" className="text-white/60 hover:text-[#00D4FF]">
+            <div className="glass-card p-6 rounded-sm border border-industrial-blue/10">
+              <Phone className="w-8 h-8 text-industrial-blue mx-auto mb-3" />
+              <h3 className="text-white font-black uppercase tracking-widest text-xs mb-1">Direct Line</h3>
+              <a href="tel:07920449132" className="text-white/40 hover:text-industrial-blue text-sm">
                 07920 449 132
               </a>
             </div>
-            <div className="glass-card p-6 rounded-xl">
-              <Clock className="w-8 h-8 text-[#00D4FF] mx-auto mb-3" />
-              <h3 className="text-white font-semibold mb-1">Availability</h3>
-              <p className="text-white/60">24/7 Service</p>
+            <div className="glass-card p-6 rounded-sm border border-industrial-blue/10">
+              <Clock className="w-8 h-8 text-industrial-blue mx-auto mb-3" />
+              <h3 className="text-white font-black uppercase tracking-widest text-xs mb-1">Availability</h3>
+              <p className="text-white/40 text-sm">24/7 Deployment</p>
             </div>
           </motion.div>
         </motion.div>
