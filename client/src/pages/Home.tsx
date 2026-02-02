@@ -261,11 +261,8 @@ function Navigation() {
                 {link.label}
               </a>
             ))}
-            <a href="tel:07920449132" className="mt-2">
-              <Button className="w-full bg-[#00D4FF] hover:bg-[#00D4FF]/90 text-white">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
+            <a href="tel:07920449132" className="mt-2 text-center text-white/50 text-xs font-black uppercase tracking-widest block py-4 border border-industrial-blue/10 rounded-sm">
+              DEPLOY: 07920 449 132
             </a>
           </nav>
         </motion.div>
@@ -532,7 +529,7 @@ function CaseStudySection() {
         { value: "100%", label: "Compliant Disposal" },
         { value: "Zero", label: "Incidents" },
       ],
-      color: "#00D4FF",
+      color: "var(--industrial-blue)",
     },
     {
       id: "debenhams",
@@ -592,9 +589,9 @@ function CaseStudySection() {
         >
           <motion.span
             variants={fadeInUp}
-            className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase mb-4"
+            className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase mb-4"
           >
-            Major Projects
+            Major Contracts
           </motion.span>
           <motion.h2
             variants={fadeInUp}
@@ -788,10 +785,10 @@ function AboutSection() {
               >
                 <Button
                   size="lg"
-                  className="bg-[#1877F2] hover:bg-[#1877F2]/90 text-white glow-blue-hover"
+                  className="bg-[#1877F2] hover:bg-[#1877F2]/90 text-white shadow-lg shadow-[#1877F2]/20 rounded-sm font-black uppercase tracking-widest"
                 >
-                  <Facebook className="w-5 h-5 mr-2" />
-                  Facebook
+                  <Facebook className="w-5 h-5 mr-3" />
+                  NETWORK
                 </Button>
               </a>
             </motion.div>
@@ -907,7 +904,7 @@ function GallerySection() {
               key={index}
               variants={scaleIn}
               onClick={() => setSelectedImage(index)}
-              className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer zoom-on-hover border border-white/10 hover:border-[#00D4FF]/50 transition-colors"
+              className="relative group overflow-hidden rounded-sm aspect-square cursor-pointer zoom-on-hover border border-white/10 hover:border-industrial-blue transition-colors"
             >
               <img
                 src={image.src}
@@ -1027,8 +1024,8 @@ function GallerySection() {
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#050508] to-transparent rounded-b-xl">
               <div className="flex items-center justify-between">
                 <div>
-                  <span className={`px-2 py-1 text-xs font-semibold rounded-full mr-2 ${galleryImages[selectedImage].type === "before" ? "bg-[#00D4FF]/80 text-white" :
-                    galleryImages[selectedImage].type === "after" ? "bg-[#00D4FF]/80 text-white" :
+                  <span className={`px-2 py-1 text-[10px] font-black uppercase tracking-widest rounded-sm mr-2 ${galleryImages[selectedImage].type === "before" ? "bg-red-600/80 text-white" :
+                    galleryImages[selectedImage].type === "after" ? "bg-industrial-blue/80 text-white" :
                       "bg-white/20 text-white"
                     }`}>
                     {galleryImages[selectedImage].type === "before" ? "Before" :
@@ -1058,27 +1055,27 @@ function GallerySection() {
             onClick={(e) => e.stopPropagation()}
             className="w-full max-w-5xl h-[85vh] bg-white rounded-2xl overflow-hidden relative"
           >
-            <div className="absolute top-0 left-0 right-0 h-14 bg-[#050508] flex items-center justify-between px-4 z-10">
+            <div className="absolute top-0 left-0 right-0 h-14 bg-[#050508] flex items-center justify-between px-6 z-10 border-b border-industrial-blue/20">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#00D4FF]" />
-                <span className="text-white font-medium">DJ Waste & Demolition on Checkatrade</span>
+                <CheckCircle2 className="w-5 h-5 text-industrial-blue" />
+                <div className="flex flex-col">
+                  <span className="text-white font-black uppercase tracking-widest text-[9px] leading-none mb-1">DATA VERIFICATION SYSTEM</span>
+                  <a
+                    href="https://www.checkatrade.com/trades/djwasteanddemolition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-industrial-blue hover:text-industrial-blue/80 text-[10px] font-bold uppercase tracking-widest underline leading-none"
+                  >
+                    EXTERNAL LINK
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <a
-                  href="https://www.checkatrade.com/trades/djwasteanddemolition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#00D4FF] hover:text-[#00D4FF]/80 text-sm underline"
-                >
-                  Open in new tab
-                </a>
-                <button
-                  onClick={() => setShowCheckatradeModal(false)}
-                  className="text-white/60 hover:text-white p-1"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
+              <button
+                onClick={() => setShowCheckatradeModal(false)}
+                className="text-white/40 hover:text-white transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
             </div>
             <iframe
               src="https://www.checkatrade.com/trades/djwasteanddemolition"
@@ -1109,7 +1106,7 @@ function CheckatradeSection() {
         >
           <motion.span
             variants={fadeInUp}
-            className="text-[#00D4FF] text-sm font-semibold tracking-wider uppercase"
+            className="text-industrial-blue text-xs font-black tracking-[.5em] uppercase"
           >
             Verified & Trusted
           </motion.span>
@@ -1251,7 +1248,7 @@ function TestimonialsSection() {
             <motion.div key={index} variants={scaleIn}>
               <Card className="glass-card p-6 h-full relative">
                 {/* Quote Mark */}
-                <div className="absolute -top-2 -left-2 text-8xl text-[#00D4FF]/10 font-serif leading-none">
+                <div className="absolute -top-2 -left-2 text-8xl text-industrial-blue/10 font-serif leading-none">
                   "
                 </div>
 
@@ -1273,8 +1270,8 @@ function TestimonialsSection() {
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#00D4FF] to-[#00D4FF] flex items-center justify-center">
-                    <Users className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-sm bg-industrial-slate flex items-center justify-center border border-white/10">
+                    <Users className="w-5 h-5 text-industrial-blue" />
                   </div>
                   <div>
                     <div className="text-white font-medium">
@@ -1427,7 +1424,7 @@ function Footer() {
               <img
                 src="/images/dj-logo.png"
                 alt="DJ Waste & Demolition"
-                className="w-10 h-10 rounded-full object-cover border-2 border-[#00D4FF]/50"
+                className="w-10 h-10 rounded-sm object-cover border border-industrial-blue/30"
               />
               <div>
                 <span className="text-xl font-bold text-white">DJ</span>
@@ -1506,7 +1503,7 @@ function Footer() {
                 href="https://www.checkatrade.com/trades/djwasteanddemolition"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-[#00D4FF] flex items-center gap-2"
+                className="hover:text-industrial-blue flex items-center gap-2"
               >
                 <CheckCircle2 className="w-4 h-4" />
                 Checkatrade Profile
