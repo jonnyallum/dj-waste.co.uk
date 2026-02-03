@@ -18,11 +18,9 @@ jobs:
                   node-version: "20"
 
             - name: Install Dependencies
-              working-directory: ./dj-waste-app
               run: npm ci --legacy-peer-deps
 
             - name: Build
-              working-directory: ./dj-waste-app
               run: npm run build
 
             - name: Deploy via rsync
@@ -35,10 +33,9 @@ jobs:
                   ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
                   # Sync 'dist/public/' content to 'public_html/' on server
-                  # Note: The slash at the end of source 'public/' counts!
                   rsync -avz --delete \
                     --exclude '.git' \
                     --exclude '.github' \
                     --exclude 'node_modules' \
                     -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SSH_PORT }}" \
-                    ./dj-waste-app/dist/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/
+                    ./dist/public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/
