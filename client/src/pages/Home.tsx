@@ -1541,7 +1541,7 @@ function Footer() {
 // Main Home Page Component
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#050508] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#050508] text-white overflow-x-hidden industrial-backdrop">
       <Navigation />
       <HeroSection />
       <ServicesSection />
