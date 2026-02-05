@@ -447,15 +447,8 @@ function ServicesSection() {
   return (
     <section id="services" className="py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050508] via-[#0a0a12] to-[#050508]" />
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage: "url('/images/services-icon-bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+      <div className="absolute inset-0 bg-black" />
+
 
       <div className="container relative z-10">
         <motion.div
@@ -606,7 +599,7 @@ function CaseStudySection() {
         <div className="glass-card overflow-hidden rounded-3xl border border-white/10">
           <div className="grid lg:grid-cols-12 min-h-[600px]">
             {/* Project Navigation (Left Side) */}
-            <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white/10 bg-[#050508]/50 flex flex-col">
+            <div className="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-white/10 bg-black flex flex-col">
               {projects.map((project, index) => (
                 <button
                   key={project.id}
@@ -640,10 +633,7 @@ function CaseStudySection() {
             </div>
 
             {/* Project Details (Right Side) */}
-            <div className="lg:col-span-8 p-8 lg:p-16 flex flex-col justify-center relative bg-[url('/images/hero-bg.png')] bg-cover bg-center">
-              {/* Overlay for readability */}
-              <div className="absolute inset-0 bg-[#050508]/90" />
-
+            <div className="lg:col-span-8 p-8 lg:p-16 flex flex-col justify-center relative bg-black">
               <div className="relative z-10">
                 <motion.div
                   key={activeProject} // Triggers animation on change
@@ -700,15 +690,7 @@ function AboutSection() {
 
   return (
     <section id="about" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/about-bg.png"
-          alt=""
-          className="w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050508] via-[#050508]/95 to-[#050508]/80" />
-      </div>
+      <div className="absolute inset-0 bg-black" />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -848,7 +830,7 @@ function GallerySection() {
   }, []);
 
   return (
-    <section id="gallery" className="py-24 relative overflow-hidden bg-[#050508]">
+    <section id="gallery" className="py-24 relative overflow-hidden bg-black">
       <div className="container">
         <motion.div
           initial="hidden"
@@ -906,7 +888,7 @@ function GallerySection() {
                 alt={image.label}
                 className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Type Badge */}
               <div className="absolute top-3 left-3">
@@ -976,7 +958,7 @@ function GallerySection() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelectedImage(null)}
-          className="fixed inset-0 z-50 bg-[#050508]/95 backdrop-blur-xl flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
         >
           <button
             onClick={() => setSelectedImage(null)}
@@ -1016,7 +998,7 @@ function GallerySection() {
               alt={galleryImages[selectedImage].label}
               className="max-w-full max-h-[80vh] object-contain rounded-xl"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#050508] to-transparent rounded-b-xl">
+            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent rounded-b-xl">
               <div className="flex items-center justify-between">
                 <div>
                   <span className={`px-2 py-1 text-[10px] font-black uppercase tracking-widest rounded-sm mr-2 ${galleryImages[selectedImage].type === "before" ? "bg-red-600/80 text-white" :
@@ -1042,7 +1024,7 @@ function GallerySection() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setShowCheckatradeModal(false)}
-          className="fixed inset-0 z-50 bg-[#050508]/95 backdrop-blur-xl flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -1050,7 +1032,7 @@ function GallerySection() {
             onClick={(e) => e.stopPropagation()}
             className="w-full max-w-5xl h-[85vh] bg-white rounded-2xl overflow-hidden relative"
           >
-            <div className="absolute top-0 left-0 right-0 h-14 bg-[#050508] flex items-center justify-between px-6 z-10 border-b border-industrial-blue/20">
+            <div className="absolute top-0 left-0 right-0 h-14 bg-black flex items-center justify-between px-6 z-10 border-b border-industrial-blue/20">
               <div className="flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-industrial-blue" />
                 <div className="flex flex-col">
@@ -1089,7 +1071,7 @@ function CheckatradeSection() {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050508] via-[#0D1B2A] to-[#050508]" />
+      <div className="absolute inset-0 bg-black" />
 
       <div className="container relative z-10">
         <motion.div
@@ -1203,7 +1185,7 @@ function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden bg-[#050508]">
+    <section id="testimonials" className="py-24 relative overflow-hidden bg-black">
       <div className="container">
         <motion.div
           initial="hidden"
@@ -1291,15 +1273,7 @@ function TestimonialsSection() {
 function ContactSection() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/cta-bg.png"
-          alt=""
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/90 to-[#050508]" />
-      </div>
+      <div className="absolute inset-0 bg-black" />
 
       <div className="container relative z-10">
         <motion.div
