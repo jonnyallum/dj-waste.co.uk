@@ -224,7 +224,7 @@ function Navigation() {
             </a>
           ))}
           <a href="tel:07920449132">
-            <Button className="bg-industrial-blue hover:bg-industrial-blue/90 text-white industrial-blue-glow transition-all rounded-sm font-black uppercase tracking-widest text-[10px]">
+            <Button className="bg-[#00b4ff] hover:bg-[#00b4ff]/90 text-white industrial-blue-glow transition-all rounded-sm font-black uppercase tracking-widest text-[10px] press-effect">
               <Phone className="w-3 h-3 mr-2" />
               07920 449 132
             </Button>
@@ -311,7 +311,7 @@ function HeroSection() {
             className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-6 leading-none tracking-tighter uppercase"
           >
             Since 2017, We've Cleared <br />
-            <span className="text-industrial-blue">5,000 Tonnes</span> Across Hampshire
+            <span className="text-[#00b4ff] neon-text-glow">5,000 Tonnes</span> Across Hampshire
           </motion.h1>
 
           {/* Subheading - THE BEAST'S REWRITE */}
@@ -328,15 +328,19 @@ function HeroSection() {
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="tel:07920449132">
+            <motion.a
+              href="tel:07920449132"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button
                 size="lg"
-                className="bg-industrial-blue hover:bg-industrial-blue/90 text-white text-lg px-12 py-8 industrial-blue-glow pulse-industrial rounded-sm font-black uppercase tracking-widest relative overflow-hidden"
+                className="bg-[#00b4ff] hover:bg-[#00b4ff]/90 text-white text-lg px-12 py-8 glow-pulse-industrial rounded-sm font-black uppercase tracking-widest relative overflow-hidden shimmer"
               >
                 <Phone className="w-5 h-5 mr-3" />
                 CALL NOW: 07920 449 132
               </Button>
-            </a>
+            </motion.a>
             <a
               href="#services"
               onClick={(e) => scrollToSection(e, 'services')}
@@ -490,15 +494,19 @@ function ServicesSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           {services.map((service, index) => (
-            <motion.div key={index} variants={scaleIn}>
-              <Card className="glass-card p-8 h-full group hover:border-industrial-blue/50 transition-all duration-500 industrial-shadow border-gradient rounded-sm overflow-hidden">
-                <div className="w-16 h-16 rounded-sm bg-industrial-slate flex items-center justify-center mb-8 border border-white/5 group-hover:bg-industrial-blue group-hover:text-white transition-all duration-500 industrial-blue-glow">
-                  <service.icon className="w-8 h-8 text-industrial-blue group-hover:text-white transition-colors" />
+            <motion.div
+              key={index}
+              variants={scaleIn}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <Card className="glass-card p-8 h-full group hover:border-[#00b4ff]/50 transition-all duration-500 industrial-shadow border-gradient rounded-sm overflow-hidden tilt-card">
+                <div className="w-16 h-16 rounded-sm bg-industrial-slate flex items-center justify-center mb-8 border border-white/5 group-hover:bg-[#00b4ff] group-hover:text-white transition-all duration-500 industrial-blue-glow">
+                  <service.icon className="w-8 h-8 text-[#00b4ff] group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-black text-white mb-4 uppercase tracking-tight">
+                <h3 className="text-xl font-black text-white mb-4 uppercase tracking-tight group-hover:text-[#00b4ff] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-white/50 leading-relaxed font-medium text-sm">{service.description}</p>
+                <p className="text-white/50 leading-relaxed font-medium text-sm group-hover:text-white/80 transition-colors">{service.description}</p>
               </Card>
             </motion.div>
           ))}
@@ -889,8 +897,9 @@ function GallerySection() {
             <motion.div
               key={index}
               variants={scaleIn}
+              whileHover={{ scale: 1.02, zIndex: 10 }}
               onClick={() => setSelectedImage(index)}
-              className="relative group overflow-hidden rounded-sm aspect-square cursor-pointer zoom-on-hover border border-white/10 hover:border-industrial-blue transition-colors"
+              className="relative group overflow-hidden rounded-sm aspect-square cursor-pointer zoom-on-hover border border-white/10 hover:border-[#00b4ff] transition-colors industrial-blue-glow"
             >
               <img
                 src={image.src}
@@ -1325,15 +1334,19 @@ function ContactSection() {
             variants={fadeInUp}
             className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap mb-12"
           >
-            <a href="tel:07920449132">
+            <motion.a
+              href="tel:07920449132"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button
                 size="lg"
-                className="bg-industrial-blue hover:bg-industrial-blue/90 text-white text-lg px-8 py-7 industrial-blue-glow rounded-sm font-black uppercase tracking-widest"
+                className="bg-[#00b4ff] hover:bg-[#00b4ff]/90 text-white text-lg px-8 py-7 glow-pulse-industrial rounded-sm font-black uppercase tracking-widest shimmer"
               >
                 <Phone className="w-6 h-6 mr-3" />
                 CALL NOW
               </Button>
-            </a>
+            </motion.a>
             <a
               href={getWhatsAppUrl()}
               target="_blank"

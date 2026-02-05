@@ -189,18 +189,27 @@
     }
   }
 
-  /* Industrial Precision Effects */
+  /* Industrial Precision Effects - Upgraded to God-Tier Glows */
   .industrial-shadow {
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    box-shadow: 0 10px 30px -5px rgb(0 0 0 / 0.5), 0 4px 6px -2px rgb(0 0 0 / 0.3);
   }
 
   .industrial-blue-glow {
-    box-shadow: 0 0 20px oklch(0.55 0.15 240 / 0.2), 0 0 40px oklch(0.55 0.15 240 / 0.1);
+    box-shadow: 0 0 25px rgba(0, 180, 255, 0.4), 0 0 50px rgba(0, 180, 255, 0.2);
+  }
+
+  .neon-text-glow {
+    text-shadow: 0 0 10px rgba(0, 180, 255, 0.6), 0 0 20px rgba(0, 180, 255, 0.3);
+  }
+
+  .neon-border-glow {
+    box-shadow: inset 0 0 10px rgba(0, 180, 255, 0.2), 0 0 15px rgba(0, 180, 255, 0.4);
   }
 
   .industrial-hover:hover {
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border-color: var(--primary);
+    box-shadow: 0 15px 30px -10px rgba(0, 180, 255, 0.3);
+    border-color: #00b4ff;
+    transform: translateY(-5px);
   }
 
   /* Glass Morphism - Refined */
@@ -353,18 +362,20 @@
     animation-delay: 1s;
   }
 
-  /* Glow pulse for important elements - Refined Blue */
+  /* Glow pulse for important elements - God-Tier Neon Blue */
   @keyframes glow-pulse-industrial {
     0%, 100% {
-      box-shadow: 0 0 20px oklch(0.55 0.15 240 / 0.2), 0 0 40px oklch(0.55 0.15 240 / 0.1);
+      box-shadow: 0 0 20px rgba(0, 180, 255, 0.3), 0 0 40px rgba(0, 180, 255, 0.1);
+      transform: scale(1);
     }
     50% {
-      box-shadow: 0 0 40px oklch(0.55 0.15 240 / 0.4), 0 0 80px oklch(0.55 0.15 240 / 0.2);
+      box-shadow: 0 0 45px rgba(0, 180, 255, 0.6), 0 0 90px rgba(0, 180, 255, 0.3);
+      transform: scale(1.02);
     }
   }
 
   .glow-pulse-industrial {
-    animation: glow-pulse-industrial 2.5s ease-in-out infinite;
+    animation: glow-pulse-industrial 2s ease-in-out infinite;
   }
 
   /* Smooth reveal on scroll */
