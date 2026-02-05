@@ -1522,14 +1522,34 @@ function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} DJ Waste & Demolition. All rights reserved.
-          </p>
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col gap-1">
+            <p className="text-white/40 text-[10px] font-mono uppercase tracking-[0.2em]">
+              © {new Date().getFullYear()} DJ Waste & Demolition. All rights reserved.
+            </p>
+            <p className="text-industrial-blue/40 text-[9px] font-black uppercase tracking-widest">
+              DEPLOYED VIA AGOS 3.0 // NEURAL NODE_04
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center sm:items-end gap-2">
+            <span className="text-industrial-blue/60 text-[10px] font-black uppercase tracking-[0.3em] mb-1">Neural Build Registry</span>
+            <div className="flex gap-4 text-[9px] font-bold text-white/30 uppercase tracking-tighter">
+              <span className="hover:text-industrial-blue transition-colors">@Conductor</span>
+              <span className="hover:text-industrial-blue transition-colors">@JonnyAI</span>
+              <span className="hover:text-industrial-blue transition-colors">@Pixel</span>
+              <span className="hover:text-industrial-blue transition-colors">@Sentinel</span>
+              <span className="hover:text-industrial-blue transition-colors">@Watcher</span>
+            </div>
+            <div className="text-[10px] font-black text-white/20 tracking-widest mt-1">
+              BUILT BY <span className="text-white/40">JONNYAI</span>
+            </div>
+          </div>
+
           <div className="flex items-center gap-4">
-            <span className="text-white/40 text-sm flex items-center gap-2">
-              <Shield className="w-4 h-4" />
-              Fully Licensed & Insured
+            <span className="text-white/40 text-[10px] font-black uppercase tracking-widest flex items-center gap-2">
+              <Shield className="w-3 h-3 text-industrial-blue" />
+              Fully Licensed
             </span>
           </div>
         </div>
